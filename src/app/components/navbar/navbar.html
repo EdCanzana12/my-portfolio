@@ -1,1 +1,125 @@
-<p>navbar works!</p>
+<header>
+  <nav class="navbar" #navbar>
+    <!-- Logo Section -->
+    <a href="#" class="logo-container" (click)="setActiveLink('home')">
+      <h3 class="logo">Ed.dev</h3>
+      <div class="logo-glow"></div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="#home" 
+           class="nav-link" 
+           [class.active]="isActiveLink('home')"
+           (click)="setActiveLink('home')">
+          <span class="link-text">Home</span>
+          <div class="link-underline"></div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#about" 
+           class="nav-link" 
+           [class.active]="isActiveLink('about')"
+           (click)="setActiveLink('about')">
+          <span class="link-text">About</span>
+          <div class="link-underline"></div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#projects" 
+           class="nav-link" 
+           [class.active]="isActiveLink('projects')"
+           (click)="setActiveLink('projects')">
+          <span class="link-text">Projects</span>
+          <div class="link-underline"></div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#contacts" 
+           class="nav-link" 
+           [class.active]="isActiveLink('contacts')"
+           (click)="setActiveLink('contacts')">
+          <span class="link-text">Contact</span>
+          <div class="link-underline"></div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <button 
+          class="btn btn-outline-secondary" 
+          (click)="toggleTheme()">
+          {{ themeService.getCurrentTheme() === 'light' ? '🌙' : '☀️' }}
+        </button>
+      </li>
+    </ul>
+
+    <!-- Futuristic Hamburger Menu -->
+    <div class="hamburger-container">
+      <button class="hamburger" 
+              #hamburger
+              (click)="toggleMobileMenu()"
+              [attr.aria-expanded]="isMenuOpen"
+              aria-label="Toggle navigation">
+        <div class="hamburger-box">
+          <div class="hamburger-inner">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+          </div>
+        </div>
+        <div class="hamburger-bg"></div>
+        <div class="pulse-ring"></div>
+      </button>
+    </div>
+
+    <!-- Mobile/Tablet Overlay Menu -->
+    <div class="mobile-overlay" #mobileOverlay>
+      <div class="overlay-content">
+        <div class="mobile-nav">
+          <a href="#home" 
+             class="mobile-link" 
+             [class.active]="isActiveLink('home')"
+             (click)="setActiveLink('home')">
+            
+            <span class="mobile-link-text">Home</span>
+            <div class="mobile-link-trail"></div>
+          </a>
+          <a href="#about" 
+             class="mobile-link" 
+             [class.active]="isActiveLink('about')"
+             (click)="setActiveLink('about')">
+            
+            <span class="mobile-link-text">About</span>
+            <div class="mobile-link-trail"></div>
+          </a>
+          <a href="#projects" 
+             class="mobile-link" 
+             [class.active]="isActiveLink('projects')"
+             (click)="setActiveLink('projects')">
+            
+            <span class="mobile-link-text">Projects</span>
+            <div class="mobile-link-trail"></div>
+          </a>
+          <a href="#contacts" 
+             class="mobile-link" 
+             [class.active]="isActiveLink('contacts')"
+             (click)="setActiveLink('contacts')">
+            
+            <span class="mobile-link-text">Contact</span>
+            <div class="mobile-link-trail"></div>
+          </a>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="overlay-decoration">
+          <div class="circuit-line circuit-1"></div>
+          <div class="circuit-line circuit-2"></div>
+          <div class="circuit-line circuit-3"></div>
+          <div class="floating-dot dot-1"></div>
+          <div class="floating-dot dot-2"></div>
+          <div class="floating-dot dot-3"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

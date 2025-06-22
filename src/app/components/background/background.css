@@ -6,10 +6,8 @@
 .bubbles {
   position: relative;
   display: flex;
-  z-index: -100;
 }
 .bubbles span {
-  z-index: -100;
   position: relative;
   width: 30px;
   height: 30px;
