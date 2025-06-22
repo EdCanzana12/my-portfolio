@@ -1,12 +1,22 @@
+import { Hero } from './components/hero/hero';
+import { About } from './components/about/about';
+import { Projects } from './components/projects/projects';
+import { Contact } from './components/contact/contact';
+import { Navbar } from './components/navbar/navbar';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [
+    Hero,
+    About,
+    Projects,
+    Contact,
+    Navbar,
+
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'],
 })
-export class App {
-  protected title = 'my-portfolio';
-}
+export class AppComponent {}
