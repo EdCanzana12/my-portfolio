@@ -13,7 +13,7 @@
   width: 100%;
   height: 80px;
   /* background: linear-gradient(135deg, #0f0c2c 0%, #1a1640 50%, #0f0c2c 100%); */
-  /* backdrop-filter: blur(10px); */
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(90, 90, 227, 0.3);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
   display: flex;
